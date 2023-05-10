@@ -1,27 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MessagesService } from '../../services/messages.service';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent  {
 
   tweetMessage: string = ""
   tweetMaxLength: number = 240;
   tweetRemain: number = this.tweetMaxLength;
 
-  constructor() {}
-
-  ngOnInit() {
-  }
+  constructor(private service: MessagesService) {}
 
   changeTweet(){
     this.tweetRemain = this.tweetMaxLength - this.tweetMessage.length;
   }
 
   sendTweet() {
-    alert(this.tweetMessage);
+    this.service.addMessage = this.tweetMessage;
+    this.tweetMessage = "";
+    this.tweetRemain = this.tweetMaxLength
   }
 
 }

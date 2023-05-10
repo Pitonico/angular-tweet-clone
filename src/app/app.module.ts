@@ -11,6 +11,8 @@ import { PostComponent } from './components/post/post.component';
 import { TweetComponent } from './components/tweet/tweet.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { MessagesService } from './services/messages.service';
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,15 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     PostComponent,
     TweetComponent,
-    FooterComponent
+    FooterComponent,
+    AvatarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [MessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

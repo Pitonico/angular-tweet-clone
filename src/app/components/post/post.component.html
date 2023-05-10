@@ -1,13 +1,13 @@
 <div class="bg-white w-[650px] rounded-lg shadow p-6 mb-8">
-  <div class="flex justify-center w-full">
-    <!-- avatar circle -->
-      <div class="bg-gray-400 cursor-pointer font-bold w-12 h-12 flex items-center justify-center rounded-full mr-2">
-        D
-      </div>
+  <div class="flex">
+      <!-- avatar circle -->
+      <app-avatar></app-avatar>
+      <!-- textarea -->
       <div class="flex-1">
         <textarea
           [(ngModel)]="tweetMessage"
           (input)="changeTweet()"
+          (keyup.enter)="sendTweet()"
           [maxlength]="tweetMaxLength"
           class=
             "w-full
